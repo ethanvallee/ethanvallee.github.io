@@ -52,9 +52,11 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top" , newPositionY);
 			}
+
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -68,7 +70,12 @@
 			// TODO 2 - Variable declarations 
 				var positionX = 0
 				var points = 0
-				var speed = 10
+				var speedX = 10
+				var positionY = 0
+				var speedY = 10
+				var boardHeight = jQuery(window).height();
+				var randNum = Math.random() * 100;
+			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -78,15 +85,25 @@
 			
 			function update() {
 			    /* Your code to increase X Position by 10 Here */
-				positionX = positionX + speed
-				moveBoxTo(positionX)
+				positionX = positionX + speedX
+				positionY = positionY + speedY
+				moveBoxTo(positionX,positionY)
 				if(positionX > boardWidth-70){
-					speed = -speed
+					speedX = -speedX
 				}
 				if(positionX<0){
-					speed = -speed
+					speedX = -speedX
 				}
-			
+				
+				if(positionY > boardHeight-70){
+					speedY = -speedY
+				}
+
+				if(positionY < 0){
+					speedY = -speedY
+				}
+
+
 			};
 
 
@@ -96,19 +113,28 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0;
-				//Add Points
+				
+			positionX = 0;
+			positionY = 0;	
+			//Add Points
 				points = points + 1
 				changeBoxText(points);
-		        speed = speed + 3
-			if(Speed > 0){
-				speed += 3
+			if(speedX > 0){
+				speedX += 3
 			}
-			else if (Speed < 0){
-				speed -= 3
+			else if (speedX < 0){
+				speedX -= 3
 			}
 			
-			
+			if(speedY > 0){
+				speedY += 3
+			}
+			else if (speedY < 0){
+				speedY -= 3
+			}
+
+
+
 			};
 
 
