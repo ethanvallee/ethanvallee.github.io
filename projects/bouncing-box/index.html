@@ -6,6 +6,10 @@
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
+		body {
+		 	background-image: url("../../images/ProfilePic.jpg");
+ 			background-color: #cccccc;
+		}
 		.box {
 			width: 70px;
 			height: 70px;
@@ -74,8 +78,8 @@
 				var positionY = 0
 				var speedY = 10
 				var boardHeight = jQuery(window).height();
-				var randNum = Math.random() * 100;
-			
+				var randNumX = Math.floor(Math.random() * boardWidth);
+				var randNumY = Math.floor(Math.random() * boardHeight);
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -114,8 +118,8 @@
 			*/
 			function handleBoxClick() {
 				
-			positionX = 0;
-			positionY = 0;	
+			positionX = randNumX;
+			positionY = randNumY;	
 			//Add Points
 				points = points + 1
 				changeBoxText(points);
