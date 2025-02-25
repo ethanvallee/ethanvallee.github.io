@@ -21,7 +21,7 @@ var init = function (window) {
 
     // TODO 2 : Create a function that draws a circle
     function drawCircle() {
-      // Code to draw a circle
+      // Code to draw a circle, and the properties of said circle
       circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
       physikz.addRandomVelocity(circle, canvas);
       view.addChild(circle);
@@ -29,14 +29,15 @@ var init = function (window) {
     }
 
     // TODO 3 / 7 : Call the drawCircle() function
-    /*
+    /* Draws a circle 5 times, but innificient    
             drawCircle();
             drawCircle();
             drawCircle();
             drawCircle();
             drawCircle();
             */
-    for (var i = 0; i <= 100; i++) {
+      //This loop will easily draw 100 circles for us    
+      for (var i = 0; i <= 100; i++) {
       drawCircle();
     }
 
@@ -50,7 +51,7 @@ var init = function (window) {
         and check to see if it has drifted off the screen.         
         */
     function update() {
-      // TODO 4 : Update the circle's position //
+      // TODO 4 : Update the circle's position, innificient //
 
       /*
             physikz.updatePosition(circles[0]);
@@ -60,6 +61,7 @@ var init = function (window) {
             physikz.updatePosition(circles[4]);
           
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
+            // Prevents the circles from going off the edges, but this is innificinet
             game.checkCirclePosition(circles[0])
             game.checkCirclePosition(circles[1])
             game.checkCirclePosition(circles[2])
@@ -86,7 +88,7 @@ var init = function (window) {
       }
 
       // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-
+      //This prevents the balls from going off the sides, as well as the top and bottom
       if (circle.x < 0) {
         circle.x = canvas.width;
       }
