@@ -33,10 +33,7 @@
     obstacleHitZone.rotationalVelocity = 10;
     } 
 
-    createObstacles(400, groundY - 50, 25, 10);
-    createObstacles(500, groundY - 50, 100, 25);
-    createObstacles(900, groundY - 50, 100, 25);
-   
+    
     function createEnemy(x, y, speed, health) {
       var enemy = game.createGameItem("enemy", 25); //Creates enemy and adds to game
       var redSquare = draw.rect(50, 50, "red"); //Creates a red square in the red square variable
@@ -58,9 +55,7 @@
       };
     }
     
-    createEnemy(400, groundY - 50, 3, 10);
-    createEnemy(800, groundY - 50, 10, 20);
-    createEnemy(1200, groundY - 50, 50, 15);
+    
    
     function createReward(x, y, speed, health) {
       var reward = game.createGameItem("reward", 25); //Creates reward and adds to game
@@ -79,7 +74,7 @@
       reward.shrink();
       };
     }  
-      createReward(1000, groundY - 100, 3, 50);
+      
 
 
       function createLevel(x, y, speed) {
@@ -98,13 +93,36 @@
         startLevel();
         };
       }  
-        createLevel(1500, groundY-50,3 );
+       
   
 
 
     function startLevel() {
       // TODO 13 goes below here
 
+      var level = levelData[currentLevel]; //Can store which level we're on
+      var levelObjects = level.gameItems //retrives the number of games items and stores it in level objects
+
+      for(i=0; i < levelObjects.length; i++){
+        var element = levelObjects[i];
+     
+        if(element.type === "sawblade"){ //Checks the type key value to detirmine which object to make
+          createObstacles(element.x, element.y, element.hitSize, element.damage); //If condition is true, calls the relevant function
+        }
+        
+        if(element.type === "enemy"){ //Checks the type key value to detirmine which object to make
+          createEnemy(element.x, element.y, element.speed, element.health); //If condition is true, calls the relevant function
+        }
+
+        if(element.type === "reward"){ //Checks the type key value to detirmine which object to make
+          createReward(element.x, element.y, element.speed, element.health); //If condition is true, calls the relevant function
+        }
+
+        if(element.type === "level"){ //Checks the type key value to detirmine which object to make
+          createLevel(element.x, element.y, element.speed); //If condition is true, calls the relevant function
+        }
+        
+      }
 
 
       //////////////////////////////////////////////
