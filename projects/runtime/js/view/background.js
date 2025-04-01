@@ -51,10 +51,10 @@ var background = function (window) {
             moon.scaleY = 1.0; //Scales the moon's height
             background.addChild(moon); //Adds the moon to the background container
             
-            for (var i=0 ; i < 101 ; i++){
-                var circle = draw.circle(10, "white", "yellow", 2);
-                circle.x = canvasWidth * Math.random();
-                circle.y = groundY * Math.random();
+            for (var i=0 ; i < 20 ; i++){  //This loop will draw about 20 "stars in the sky that are yellow and white"
+                var circle = draw.circle(10, "yellow", "yellow", 2); //Dras a yellow and white circle
+                circle.x = canvasWidth * Math.random(); //Places star on X randomly
+                circle.y = groundY * Math.random(); //Places star on Y randomly
                 background.addChild(circle);
             }
 
@@ -62,19 +62,19 @@ var background = function (window) {
 
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             for (var i = 0; i < 5; ++i) {
-                var buildingColors = ["red", "blue", "black", "purple", "orange"]
-                var buildingHeight = 300 * Math.random();
-                var building = draw.rect(75, buildingHeight, buildingColors[i], "Black", 1);
-                building.x = 200 * i;
+                var buildingColors = ["grey", "black", "white", "grey", "black"] //The building's choice of colors
+                var buildingHeight = 300 * Math.random(); // Will decide how tall the buildings are, from a scale of 0 to 300
+                var building = draw.rect(75, buildingHeight, buildingColors[i], "Black", 1); //Draws the building using the previous variables and random equations
+                building.x = 200 * i; // The building's x will be 200 * whatever i currently is
                 building.y = groundY - buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
               }
             
             // TODO 3: Part 1 - Add a tree
-            tree = draw.bitmap("img/tree.png");
-            tree.x = canvasWidth - 300;
-            tree.y = groundY -225;
+            tree = draw.bitmap("img/tree.png"); //Looks through our image file to plave a tree on the canvas
+            tree.x = canvasWidth - 300; //Tree is 300 below the canvasWidth
+            tree.y = groundY -225; // Tree is 225 below the GroundY
             background.addChild(tree);
             
         } // end of render function - DO NOT DELETE

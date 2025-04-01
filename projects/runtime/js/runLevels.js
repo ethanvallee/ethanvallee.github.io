@@ -71,7 +71,7 @@
       reward.onPlayerCollision = function () {
         game.increaseScore(50);
         game.changeIntegrity(health) //Subtracts 10 health from Halle 
-      reward.shrink();
+      reward.shrink(); //Shrinks when collected
       };
     }  
       
