@@ -59,15 +59,17 @@
    
     function createReward(x, y, speed, health) {
       var reward = game.createGameItem("reward", 25); //Creates reward and adds to game
-      var blueSquare = draw.rect(50, 50, "blue"); //Creates a blue square in the blue square variable
-      blueSquare.x = -25; // offsets the image from the hitzone by -25 pixels
+      var blueSquare = draw.bitmap("img/heart-png-15.png"); //Creates a blue square in the blue square variable
+      blueSquare.x = -32; // offsets the image from the hitzone by -25 pixels
       blueSquare.y = -25; // offsets the image from the hitzone by -25 pixels
       reward.addChild(blueSquare); //adds blue square as child
       reward.x = x; //X of reward
       reward.y = y; //Y of reward
+      blueSquare.scaleX = 0.2;
+      blueSquare.scaleY = 0.2;
       game.addGameItem(reward); //Adds item to game
       reward.velocityX -= speed; //How fast the box spins
-      reward.rotationalVelocity = 10; //Sets rotational velocity of reward
+      reward.rotationalVelocity = 0; //Sets rotational velocity of reward
       reward.onPlayerCollision = function () {
         game.increaseScore(50);
         game.changeIntegrity(health) //Subtracts 10 health from Halle 
