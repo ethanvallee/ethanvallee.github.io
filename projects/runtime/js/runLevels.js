@@ -36,9 +36,9 @@
     
     function createEnemy(x, y, speed, health) {
       var enemy = game.createGameItem("enemy", 25); //Creates enemy and adds to game
-      var redSquare = draw.bitmap("img/bomb.webp"); //Creates a red square in the red square variable
-      redSquare.x = -25; // offsets the image from the hitzone by -25 pixels
-      redSquare.y = -25; // offsets the image from the hitzone by -25 pixels
+      var redSquare = draw.bitmap("img/newbomb.png"); //Creates a red square in the red square variable
+      redSquare.x = -35; // offsets the image from the hitzone by -25 pixels
+      redSquare.y = -35; // offsets the image from the hitzone by -25 pixels
       enemy.addChild(redSquare); //adds red square as child
       enemy.x = x; //X of enemy
       enemy.y = y; //Y of enemy
