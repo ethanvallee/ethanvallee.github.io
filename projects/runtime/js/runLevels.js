@@ -36,18 +36,21 @@
     
     function createEnemy(x, y, speed, health) {
       var enemy = game.createGameItem("enemy", 25); //Creates enemy and adds to game
-      var redSquare = draw.rect(50, 50, "red"); //Creates a red square in the red square variable
+      var redSquare = draw.bitmap("img/bomb.webp"); //Creates a red square in the red square variable
       redSquare.x = -25; // offsets the image from the hitzone by -25 pixels
       redSquare.y = -25; // offsets the image from the hitzone by -25 pixels
       enemy.addChild(redSquare); //adds red square as child
       enemy.x = x; //X of enemy
       enemy.y = y; //Y of enemy
+      redSquare.scaleX = 0.2;
+      redSquare.scaleY = 0.2;
       game.addGameItem(enemy); //Adds item to game
       enemy.velocityX -= speed; //How fast the box spins
-      enemy.rotationalVelocity = 10; //Sets rotational velocity of enemy
+      enemy.rotationalVelocity = 5; //Sets rotational velocity of enemy
       enemy.onPlayerCollision = function () {
         game.changeIntegrity(health) //Subtracts 10 health from Halle 
       };
+      
       
       enemy.onProjectileCollision = function () {
         game.increaseScore(100);  //Player gains 100 pts if enemy is defeated
