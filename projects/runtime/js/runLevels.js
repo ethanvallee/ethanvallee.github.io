@@ -84,15 +84,17 @@
 
       function createLevel(x, y, speed) {
         var level = game.createGameItem("level", 25); //Creates level and adds to game
-        var yellowSquare = draw.rect(50, 50, "yellow"); //Creates a yellow square in the yellow square variable
-        yellowSquare.x = -25; // offsets the image from the hitzone by -25 pixels
+        var yellowSquare = draw.bitmap("img/flag.png"); //Creates a yellow square in the yellow square variable
+        yellowSquare.x = -35; // offsets the image from the hitzone by -25 pixels
         yellowSquare.y = -25; // offsets the image from the hitzone by -25 pixels
         level.addChild(yellowSquare); //adds yellow square as child
         level.x = x; //X of level
         level.y = y; //Y of level
+        yellowSquare.scaleX = 0.1;
+        yellowSquare.scaleY = 0.1;
         game.addGameItem(level); //Adds item to game
         level.velocityX -= speed; //How fast the box spins
-        level.rotationalVelocity = 10; //Sets rotational velocity of level
+        level.rotationalVelocity = 1; //Sets rotational velocity of level
         level.onPlayerCollision = function () {
         level.shrink();
         startLevel();
