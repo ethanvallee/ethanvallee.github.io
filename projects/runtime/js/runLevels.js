@@ -21,7 +21,7 @@
     
     function createObstacles(x,y, hitSize, damage) {
     var hitZoneSize = 25; //Defines size of hitzone
-    var damageFromObstacle = 10; //How much damage Hall-E takes from the saw
+    var damageFromObstacle = damage; //How much damage Hall-E takes from the saw
     var obstacleHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //Creates obstacle with size parameters
     obstacleHitZone.x = x; // X coordinate
     obstacleHitZone.y = y; //Y Coordinate

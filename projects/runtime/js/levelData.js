@@ -33,12 +33,22 @@ var makeLevelData = function (window) {
         number: 2,
         speed: -3,
         gameItems: [
-          { type: "sawblade", x: 400, y: groundY, damage: 35},
-          { type: "sawblade", x: 700, y: groundY, damage: 35 },
-          { type: "sawblade", x: 900, y: groundY, damage: 35 },
-          { type: "sawblade", x: 1200, y: groundY, damage: 35},
-          { type: "sawblade", x: 1600, y: groundY, damage: 35 },
-          { type: "sawblade", x: 2000, y: groundY, damage: 35},
+          { type: "sawblade", x: 400, y: groundY, damage: 30},
+          { type: "sawblade", x: 700, y: groundY, damage: 30 },
+          { type: "sawblade", x: 900, y: groundY, damage: 30 },
+          { type: "sawblade", x: 1200, y: groundY, damage: 30},
+          { type: "sawblade", x: 1600, y: groundY, damage: 30 },
+          { type: "sawblade", x: 2000, y: groundY, damage: 30},
+        
+          { type: "enemy", x: 400, y: groundY - 50, speed: 4, health: -30 },
+          { type: "enemy", x: 900, y: groundY - 50, speed: 2, health: -30 },
+          { type: "enemy", x: 1200, y: groundY - 50, speed: 4, health: -30 },
+          { type: "enemy", x: 1500, y: groundY - 50, speed: 8, health: -30 },
+          { type: "enemy", x: 5000, y: groundY - 50, speed: 20, health: -30 },
+          { type: "enemy", x: 10000, y: groundY - 50, speed: 45, health: -30 },
+         
+          { type: "reward", x: 1600, y: groundY - 80, speed: 2, health: 100 },
+       
         ],
       },
     ];
