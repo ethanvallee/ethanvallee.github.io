@@ -96,7 +96,7 @@ var background = function (window) {
             }
             
             // TODO 4: Part 2 - Parallax
-            for (var i=0; i < buildings.length; i++ ){ //This function will loop the buildings made above, putting the x's at random locations
+             for (var i=0; i < buildings.length; i++ ){ //This function will loop the buildings made above, putting the x's at random locations
                 var building = buildings[i];
                 building.x -= Math.random();
                if (building.x < -100){

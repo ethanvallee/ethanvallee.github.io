@@ -20,17 +20,19 @@
     // BEGIN EDITING YOUR CODE HERE
     
     function createObstacles(x,y, hitSize, damage) {
-    var hitZoneSize = 25; //Defines size of hitzone
-    var damageFromObstacle = damage; //How much damage Hall-E takes from the saw
-    var obstacleHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //Creates obstacle with size parameters
-    obstacleHitZone.x = x; // X coordinate
-    obstacleHitZone.y = y; //Y Coordinate
-    game.addGameItem(obstacleHitZone); //Adds obstacle hitzone
-    var obstacleImage = draw.bitmap("img/sawblade.png"); //Makes the image of the saw
-    obstacleHitZone.addChild(obstacleImage); //Attaches image
-    obstacleImage.x = -25; //Positions images on hitzone by moving left
-    obstacleImage.y = -25; //Positions images on hitzone by moving down
-    obstacleHitZone.rotationalVelocity = 10;
+      var hitZoneSize = 25; //Defines size of hitzone
+      var damageFromObstacle = damage; //How much damage Hall-E takes from the saw
+      var obstacleHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //Creates obstacle with size parameters
+      obstacleHitZone.x = x; // X coordinate
+      obstacleHitZone.y = y; //Y Coordinate
+      game.addGameItem(obstacleHitZone); //Adds obstacle hitzone
+      var obstacleImage = draw.bitmap("img/spikeball.webp"); //Makes the image of the saw
+      obstacleHitZone.addChild(obstacleImage); //Attaches image
+      obstacleImage.x = -25; //Positions images on hitzone by moving left
+      obstacleImage.y = -25; //Positions images on hitzone by moving down
+      obstacleHitZone.rotationalVelocity = 6;
+      obstacleImage.scaleX = 0.04;
+      obstacleImage.scaleY = 0.04;
     } 
 
     

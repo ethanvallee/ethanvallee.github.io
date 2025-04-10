@@ -45,7 +45,7 @@ var makeLevelData = function (window) {
           { type: "enemy", x: 1200, y: groundY - 50, speed: 4, health: -30 },
           { type: "enemy", x: 1500, y: groundY - 50, speed: 8, health: -30 },
           { type: "enemy", x: 5000, y: groundY - 50, speed: 20, health: -30 },
-          { type: "enemy", x: 10000, y: groundY - 50, speed: 45, health: -30 },
+          { type: "enemy", x: 12000, y: groundY - 50, speed: 45, health: -30 },
          
           { type: "reward", x: 1600, y: groundY - 80, speed: 2, health: 100 },
        
