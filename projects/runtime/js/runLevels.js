@@ -30,7 +30,7 @@
       obstacleHitZone.addChild(obstacleImage); //Attaches image
       obstacleImage.x = -25; //Positions images on hitzone by moving left
       obstacleImage.y = -25; //Positions images on hitzone by moving down
-      obstacleHitZone.rotationalVelocity = 6;
+      obstacleHitZone.rotationalVelocity       = 6;
       obstacleImage.scaleX = 0.04;
       obstacleImage.scaleY = 0.04;
     } 
